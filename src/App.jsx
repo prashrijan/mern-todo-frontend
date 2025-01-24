@@ -17,7 +17,6 @@ function App() {
   const navigate = useNavigate();
 
   const endPoint = import.meta.env.VITE_ENDPOINT;
-  console.log(endPoint);
 
   const registerUser = (user) => {
     axios
@@ -125,6 +124,8 @@ function App() {
   };
 
   const handleDelete = (id) => {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id != id));
+
     const accessToken = JSON.parse(localStorage.getItem("accessToken"));
     if (!accessToken) {
       console.error("No access token available!");
