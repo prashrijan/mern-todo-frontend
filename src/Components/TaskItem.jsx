@@ -3,9 +3,9 @@ import capitalizeFirstLetter from "../utils/capitalizeFirstLetter";
 
 const TaskItem = ({ task, changeStatus, handleDelete }) => {
   const [status, setStatus] = useState(task.status || "pending");
+
   const handleStatusChange = (e, id) => {
     setStatus(e.target.value);
-
     changeStatus(id, e.target.value);
   };
 
@@ -17,7 +17,7 @@ const TaskItem = ({ task, changeStatus, handleDelete }) => {
 
   return (
     <div
-      className={`p-4 border border-gray-300 rounded-md shadow-md mb-4 ${statusColors[status]}`}
+      className={`p-4 border border-gray-300 rounded-md shadow-md mb-4 ${statusColors[status]} w-full sm:w-3/4 md:w-1/2`}
     >
       <div className="flex justify-between items-center text-white text-lg">
         <h3 className="font-semibold">{capitalizeFirstLetter(task.task)}</h3>

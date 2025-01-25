@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Sidebar from "../Components/Sidebar";
 import TasksBreakdown from "../Components/TasksBreakdown";
 
@@ -17,9 +17,7 @@ const Dashboard = ({
 
   return (
     <div className="flex min-h-screen">
-      {/* Sidebar */}
       <Sidebar user={user} onLogout={handleLogout} />
-
       <div className="flex-1 p-4">
         <TasksBreakdown
           tasks={tasks}
