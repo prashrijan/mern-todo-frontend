@@ -85,9 +85,10 @@ function App() {
         },
       })
       .then((res) => {
-        setTasks(res.data.tasks);
+        setTasks(res.data?.tasks);
       })
       .catch((err) => {
+        setTasks([]);
         console.error(
           "Error fetching tasks:",
           err.response ? err.response.data : err.message
